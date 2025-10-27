@@ -1,0 +1,27 @@
+
+trigger:
+- main
+
+pool:
+  vmImage: jenkinscli
+
+stages:
+- stage: docker
+  displayName: 'docker build'
+  jobs:
+  - job: dockerjob
+    displayName: 'docker build step'
+    pool:
+      name: jenkinscli
+      demands:
+        - agent.name -equals raj-Surface-Laptop
+    steps:
+    - script: |
+        echo "Running Maven build..."
+        docker build docker build -t jenkins-cli-runner .
+      displayName: 'docker build step'
+
+    - script: |
+        echo "Running Maven build..."
+        docker run --rm jenkins-cli-runner
+      displayName: 'docker build step'  
