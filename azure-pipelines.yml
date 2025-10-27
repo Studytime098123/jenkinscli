@@ -18,7 +18,7 @@ stages:
     steps:
     - script: |
         echo "Running Maven build..."
-        docker build docker build -t jenkins-cli-runner .
+        docker build -t jenkins-cli-runner .
       displayName: 'docker build step'
 
     - script: |
