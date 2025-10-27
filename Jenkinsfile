@@ -39,7 +39,7 @@ pipeline {
         stage('terraform destroy') {
             steps {
                 echo 'terraform destroy'
-                sh "terraform destroy -auto-approve tfplan"
+                sh "terraform destroy -auto-approve"
             }
         }
     }
