@@ -24,4 +24,4 @@ stages:
     - script: |
         echo "Running Maven build..."
         docker run --rm jenkins-cli-runner
-      displayName: 'docker build step'  
+      displayName: 'docker build step'
